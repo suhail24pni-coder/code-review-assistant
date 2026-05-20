@@ -1,0 +1,28 @@
+bug_hunting_task:
+  description: >
+    Analyze the following source code for logic errors, memory leaks, unhandled exceptions, and edge cases:
+    
+    {code_input}
+  expected_output: >
+    A comprehensive list of identified bugs, security risks, or potential runtime errors, categorized by severity.
+  agent: bug_hunter
+
+style_review_task:
+  description: >
+    Review the following source code for style, naming conventions, and readability. 
+    Make sure to use the LineLengthChecker tool to scan for lines exceeding 80 characters:
+    
+    {code_input}
+  expected_output: >
+    A style report highlighting PEP8 violations, naming issues, and a list of specific lines exceeding 80 characters.
+  agent: style_reviewer
+
+refactor_suggestion_task:
+  description: >
+    Take the original code, the Bug Report, and the Style Review. 
+    Provide a fully refactored, optimized version of the code. 
+    Below the code, provide a detailed markdown list explaining why each change was made.
+  expected_output: >
+    A final markdown summary containing the bug report, style notes, and the beautifully refactored code block with explanations.
+  agent: refactor_suggester
+  output_file: code_review.md
