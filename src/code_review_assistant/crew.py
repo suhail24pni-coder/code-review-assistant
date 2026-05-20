@@ -40,7 +40,10 @@ class CodeReviewAssistantCrew():
 
     @task
     def refactor_suggestion_task(self) -> Task:
-        return Task(config=self.tasks_config['refactor_suggestion_task'])
+        return Task(
+            config=self.tasks_config['refactor_suggestion_task'],
+            output_file='code_review.md' 
+        )
 
     @crew
     def crew(self) -> Crew:
